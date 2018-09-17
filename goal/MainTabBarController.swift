@@ -23,7 +23,6 @@ class MainTabBarController: UITabBarController {
         setNavRightController()
         
         super.viewDidLoad()
-        
         var myTabs: [UIViewController] = []
         
         // Tabに設定するViewControllerのインスタンスを生成
@@ -61,7 +60,6 @@ class MainTabBarController: UITabBarController {
     
     //MARK: - Method
     func setNavRightController() {
-        
         // addボタン
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onClickAddButton))
         addBtn.tintColor = .black
