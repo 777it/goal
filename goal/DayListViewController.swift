@@ -13,9 +13,6 @@ class DayListViewController: UIViewController, UITableViewDelegate, UITableViewD
     //MARK: - init
     init() {
         super.init(nibName: nil, bundle: nil)
-        
-        // Viewの背景色をorangeに設定する.
-        self.view.backgroundColor = UIColor.orange
     }
     
     required init?(coder aDecoder: NSCoder) {

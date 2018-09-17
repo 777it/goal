@@ -30,6 +30,8 @@ class MainTabBarController: UITabBarController {
         let mySecondTab: UIViewController = MonthListViewController()
         let myThirdTab: UIViewController = YearListViewController()
         
+        // タブの色を設定
+        tabBar.tintColor = UIColor.orange
         // タブの識別番号を設定
         myFirstTab.tabBarItem.tag = 1
         mySecondTab.tabBarItem.tag = 2
@@ -62,11 +64,9 @@ class MainTabBarController: UITabBarController {
     func setNavRightController() {
         // addボタン
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onClickAddButton))
-        addBtn.tintColor = .black
 
         // removeボタン
         let removeBtn = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(onClickRemoveButton))
-        removeBtn.tintColor = .black
         
         navigationItem.rightBarButtonItems = [addBtn, removeBtn]
     }

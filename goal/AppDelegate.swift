@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // ハロウィンカラー
+        let green_halloween = UIColor(red: 0.122, green: 0.290, blue: 0.031, alpha: 1.0)
+        let orange_halloween = UIColor(red: 0.945, green: 0.478, blue: 0.247, alpha: 1.0)
+
+        // ナビゲーションアイテムの色変更
+        UINavigationBar.appearance().tintColor = green_halloween
+        // ナビゲーションバーの色変更
+        UINavigationBar.appearance().barTintColor = orange_halloween
+        
         // TopViewControllerを生成する.
         let topViewController: TopViewController = TopViewController()
 

@@ -23,13 +23,18 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
     private var textField_give: UITextField!
     private var textField_take: UITextField!
     
+    //MARK: - Color
+    // ハロウィンカラー
+    private let green_halloween = UIColor(red: 0.122, green: 0.290, blue: 0.031, alpha: 1.0)
+    private let orange_halloween = UIColor(red: 0.945, green: 0.478, blue: 0.247, alpha: 1.0)
+    
     //MARK: - viewDidLoad
     override func viewDidLoad() {
         setNavRightController()
         super.viewDidLoad()
         
-        // Viewの背景を青にする
-        self.view.backgroundColor = UIColor.cyan
+        // Viewの背景色を定義する
+        self.view.backgroundColor = UIColor.white
 
         //MARK: Size
         // ボタンのサイズを定義
@@ -43,6 +48,10 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         let tWidth: CGFloat = 300
         let tHeight: CGFloat = 50
         
+        // UIImageViewのサイズを定義(画像)
+        let illustrationWidth: CGFloat = 300
+        let illustrationHeight: CGFloat = 150
+        
         //MARK: CGRect
         // 配置する座標を定義
         let posX: CGFloat = self.view.bounds.width/2 - bWidth/2
@@ -54,13 +63,15 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         let posY_label_give: CGFloat = posY_label_give_title + hHeight + 20
         let posY_label_take_title: CGFloat = posY_label_give + bHeight + 30
         let posY_label_take: CGFloat = posY_label_take_title + hHeight + 20
+        let posX_image: CGFloat = (self.view.bounds.width - illustrationWidth)/2
+        let posY_image_illustration: CGFloat = posY_label_take + bHeight + 30
         
         //MARK: Goal
         // Labelを作成
         let label_goal: UILabel = UILabel(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
         
-        // UILabelの背景をオレンジ色に
-        label_goal.backgroundColor = UIColor.orange
+        // UILabelの背景を設定する
+        label_goal.backgroundColor = green_halloween
         
         // UILabelの枠を丸くする
         label_goal.layer.masksToBounds = true
@@ -88,7 +99,7 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         //MARK: Give
         
         let label_give_title = UILabel(frame: CGRect(x: posX, y: posY_label_give_title, width: hWidth, height: hHeight))
-        label_give_title.backgroundColor = UIColor.blue
+        label_give_title.backgroundColor = orange_halloween
         label_give_title.layer.masksToBounds = true
         label_give_title.layer.cornerRadius = 10.0
         label_give_title.textColor = UIColor.white
@@ -116,7 +127,7 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         
         //MARK: Take
         let label_take_title = UILabel(frame: CGRect(x: posX, y: posY_label_take_title, width: hWidth, height: hHeight))
-        label_take_title.backgroundColor = UIColor.blue
+        label_take_title.backgroundColor = orange_halloween
         label_take_title.layer.masksToBounds = true
         label_take_title.layer.cornerRadius = 10.0
         label_take_title.textColor = UIColor.white
@@ -141,6 +152,11 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         textField_take.borderStyle = .roundedRect
         textField_take.clearButtonMode = .whileEditing
         
+        //MARK: Illustration
+        let imageView_illustration = UIImageView(frame: CGRect(x: posX_image, y: posY_image_illustration, width: illustrationWidth, height: illustrationHeight))
+        let image_illustration: UIImage = UIImage(named: "present.png")!
+        imageView_illustration.image = image_illustration
+        
         // ViewにLabelを追加
         self.view.addSubview(label_goal)
         self.view.addSubview(label_limit)
@@ -152,6 +168,9 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         // Viewにテキストボックスを追加
         self.view.addSubview(textField_give)
         self.view.addSubview(textField_take)
+        
+        // ViewにUIImageViewを追加
+        self.view.addSubview(imageView_illustration)
         
         // テキストボックスを非表示
         textField_give.isHidden = true
@@ -167,7 +186,6 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
     // 初期表示は編集モードOFF
     func setNavRightController() {
         let editBtn = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(startEdit))
-        editBtn.tintColor = .black
         
         navigationItem.rightBarButtonItems = [editBtn]
     }
@@ -178,7 +196,6 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         self.navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItems?.remove(at: 0)
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(endEdit))
-        doneBtn.tintColor = .black
         
         navigationItem.rightBarButtonItems = [doneBtn]
         
@@ -202,7 +219,6 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         
         navigationItem.rightBarButtonItems?.remove(at: 0)
         let editBtn = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(startEdit))
-        editBtn.tintColor = .black
         
         navigationItem.rightBarButtonItems = [editBtn]
         

@@ -13,9 +13,6 @@ class MonthListViewController: UIViewController, UITableViewDelegate, UITableVie
     //MARK: - init
     init() {
         super.init(nibName: nil, bundle: nil)
-        
-        // Viewの背景色をGreenに設定する.
-        self.view.backgroundColor = UIColor.green
     }
     
     required init?(coder aDecoder: NSCoder) {

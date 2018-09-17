@@ -13,9 +13,6 @@ class YearListViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - init
     init() {
         super.init(nibName: nil, bundle: nil)
-        
-        // Viewの背景色を設定する.
-        self.view.backgroundColor = UIColor.brown   
     }
     
     required init?(coder aDecoder: NSCoder) {
