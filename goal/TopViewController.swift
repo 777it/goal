@@ -12,8 +12,12 @@ class TopViewController: UIViewController {
 
     //MARK: - Color
     // ハロウィンカラー
-    private let green_halloween = UIColor(red: 0.122, green: 0.290, blue: 0.031, alpha: 1.0)
-    private let orange_halloween = UIColor(red: 0.945, green: 0.478, blue: 0.247, alpha: 1.0)
+    private let main_color = UIColor(red: 0.945, green: 0.478, blue: 0.247, alpha: 1.0) // オレンジ
+    private let point_color = UIColor(red: 0.122, green: 0.290, blue: 0.031, alpha: 1.0) //緑
+    
+    // クリスマスカラー
+//    private let main_color = UIColor(red: 1.000, green: 0.420, blue: 0.420, alpha: 1.0) // 赤
+//    private let point_color = UIColor(red: 0.145, green: 0.518, blue: 0.157, alpha: 1.0) // 緑
     
     //MARK: - viewDidLoad
     override func viewDidLoad() {
@@ -21,7 +25,7 @@ class TopViewController: UIViewController {
         
         
         // Viewの背景色を設定する
-        self.view.backgroundColor = orange_halloween
+        self.view.backgroundColor = main_color
         
         //MARK: Size
         // ボタンのサイズを定義
@@ -57,7 +61,7 @@ class TopViewController: UIViewController {
         
         //MARK: Day
         let dayButton = UIButton(frame: CGRect(x: posX, y: posY_button_day, width: buttonWidth, height: buttonHeight))
-        dayButton.backgroundColor = green_halloween
+        dayButton.backgroundColor = point_color
         dayButton.layer.masksToBounds = true
         dayButton.layer.cornerRadius = 20.0
         dayButton.setTitle(" DAY プラン", for: .normal)
@@ -65,7 +69,7 @@ class TopViewController: UIViewController {
 
         //MARK: Month
         let monthButton = UIButton(frame: CGRect(x: posX, y: posY_button_month, width: buttonWidth, height: buttonHeight))
-        monthButton.backgroundColor = green_halloween
+        monthButton.backgroundColor = point_color
         monthButton.layer.masksToBounds = true
         monthButton.layer.cornerRadius = 20.0
         monthButton.setTitle(" MONTH プラン", for: .normal)
@@ -73,7 +77,7 @@ class TopViewController: UIViewController {
 
         //MARK: Year
         let yearButton = UIButton(frame: CGRect(x: posX, y: posY_button_year, width: buttonWidth, height: buttonHeight))
-        yearButton.backgroundColor = green_halloween
+        yearButton.backgroundColor = point_color
         yearButton.layer.masksToBounds = true
         yearButton.layer.cornerRadius = 20.0
         yearButton.setTitle(" YEAR プラン", for: .normal)

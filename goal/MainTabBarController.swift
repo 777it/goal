@@ -17,6 +17,14 @@ class MainTabBarController: UITabBarController {
     // 入力できる最大文字数.
     let maxLength: Int = 50
     
+    //MARK: - Color
+    // ハロウィンカラー
+    let main_color = UIColor(red: 0.945, green: 0.478, blue: 0.247, alpha: 1.0) // オレンジ
+    
+    // クリスマスカラー
+//    let main_color = UIColor(red: 1.000, green: 0.420, blue: 0.420, alpha: 1.0) // 赤
+
+    
     //MARK: - viewDidLoad
     override func viewDidLoad() {
         // ナビゲーションバー設定
@@ -31,7 +39,7 @@ class MainTabBarController: UITabBarController {
         let myThirdTab: UIViewController = YearListViewController()
         
         // タブの色を設定
-        tabBar.tintColor = UIColor.orange
+        tabBar.tintColor = main_color
         // タブの識別番号を設定
         myFirstTab.tabBarItem.tag = 1
         mySecondTab.tabBarItem.tag = 2

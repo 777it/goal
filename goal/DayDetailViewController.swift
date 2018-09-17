@@ -25,8 +25,12 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
     
     //MARK: - Color
     // ハロウィンカラー
-    private let green_halloween = UIColor(red: 0.122, green: 0.290, blue: 0.031, alpha: 1.0)
-    private let orange_halloween = UIColor(red: 0.945, green: 0.478, blue: 0.247, alpha: 1.0)
+    private let main_color = UIColor(red: 0.945, green: 0.478, blue: 0.247, alpha: 1.0) // オレンジ
+    private let point_color = UIColor(red: 0.122, green: 0.290, blue: 0.031, alpha: 1.0) //緑
+    
+    // クリスマスカラー
+//    private let main_color = UIColor(red: 1.000, green: 0.420, blue: 0.420, alpha: 1.0) // 赤
+//    private let point_color = UIColor(red: 0.145, green: 0.518, blue: 0.157, alpha: 1.0) // 緑
     
     //MARK: - viewDidLoad
     override func viewDidLoad() {
@@ -71,7 +75,7 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         let label_goal: UILabel = UILabel(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
         
         // UILabelの背景を設定する
-        label_goal.backgroundColor = green_halloween
+        label_goal.backgroundColor = point_color
         
         // UILabelの枠を丸くする
         label_goal.layer.masksToBounds = true
@@ -99,7 +103,7 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         //MARK: Give
         
         let label_give_title = UILabel(frame: CGRect(x: posX, y: posY_label_give_title, width: hWidth, height: hHeight))
-        label_give_title.backgroundColor = orange_halloween
+        label_give_title.backgroundColor = main_color
         label_give_title.layer.masksToBounds = true
         label_give_title.layer.cornerRadius = 10.0
         label_give_title.textColor = UIColor.white
@@ -127,7 +131,7 @@ class DayDetailViewController: UIViewController, UITextFieldDelegate{
         
         //MARK: Take
         let label_take_title = UILabel(frame: CGRect(x: posX, y: posY_label_take_title, width: hWidth, height: hHeight))
-        label_take_title.backgroundColor = orange_halloween
+        label_take_title.backgroundColor = main_color
         label_take_title.layer.masksToBounds = true
         label_take_title.layer.cornerRadius = 10.0
         label_take_title.textColor = UIColor.white
